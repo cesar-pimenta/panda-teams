@@ -17,6 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'site_page',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -34,7 +36,7 @@ ROOT_URLCONF = 'pandateams.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates"), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,6 +83,20 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "_media")
+
+# STATIC_ROOT = os.path.join(BASE_DIR, "_static")
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

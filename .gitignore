@@ -3,4 +3,12 @@
 *.pyc
 venv
 /venv/
+_media
+/_media
+/_media/
+
+_static
+/_static
+/_static/
+
 .env
