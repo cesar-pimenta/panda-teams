@@ -1,14 +1,8 @@
 *.idea
 *.sqlite3
 *.pyc
-venv
-/venv/
-_media
+/venv
 /_media
-/_media/
-
-_static
 /_static
-/_static/
 
 .env
